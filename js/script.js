@@ -1,91 +1,66 @@
-/* const tempCelsius = parseInt(prompt('Enter Temperature: '));
-const targetUnit = prompt('Enter Unit: ');
-let finalTemp;*/
-
-const name1 = 'Greg';
-const name2 = 'Ray';
-const name3 = 'Charles';
-let longestName;
-
-if (name1.length > name2.length && name3.length) {
-    console.log(`${name1} has the longest name.`)
-} else if (name2.length > name3.length && name1.length) {
-    console.log(`${name2} has the longest name.`)
-} else if (name3.length > name2.length && name2.length) {
-    console.log(`${name3} has the longest name.`)
-} else {
-    console.log('Hm.')
+/*const randomDamage = () => {
+    return Math.floor(Math.random() * (10 - 1) + 1);
 }
 
-/*switch (targetUnit) {
-    case 'C' :
-        finalTemp = tempCelsius;
-        alert(finalTemp);
-        break;
-    case 'F':
-        finalTemp = (tempCelsius * (9 / 5)) + 32;
-        alert(tempCelsius += 32);
-        break;
-    case 'K':
-        finalTemp = tempCelsius + 273.15;
-        alert(finalTemp);
-        break;
-    default:
-        console.log('Unreadable');
-        break;
-}*/
+const chooseOption = (opt1, opt2) => {
+    let randNum = Math.round(Math.random() * (1 - 0) + 0);
+    return (randNum === 0 ? opt1 : opt2)
+}
 
+const attackPlayer = (health) => {
+    let remainingHealth = health - randomDamage();
+    return remainingHealth;
+}
 
+const logHealth = (player, health) => {
+    console.log(`${player}'s health: ${health}`)
+}
 
-/*if (actualTemp >= desiredTemp) {
-    console.log('Run A/C');
-} else if (desiredTemp >= actualTemp) {
-    console.log('Run Heat')
-} else {
-    console.log('Standby')
-}*/
+const logDeath = (winner, loser) => {
+    console.log(`${winner} defeated ${loser}`)
+}
 
+const isDead = (health) => {
+    return (health <= 0 ? true : false)
+}
 
-/*for (let i = 10; i >= 0; i--) {
-    console.log(i);
-}*/
-
-/*let i = 10;
-while (i >= 0) {
-    console.log(i);
-    i--;
-}*/
-
-/*let repeatedQ;
-
-do {
-    let response = prompt('How about that weather huh?');
-    if (response === 'stop asking') {
-        repeatedQ = false;
+function fight(player1, player2, player1Health, player2Health) {
+    while (fight = true) {
+    let attacker = chooseOption(player1, player2);
+    if (attacker === player1) {
+        player2Health = attackPlayer(player2Health);
+        logHealth(player2, player2Health);
+        if (isDead(player2Health) === true) {
+            logDeath(player1, player2)
+            break;
+        }
     } else {
-        repeatedQ = true;
+        player1Health = attackPlayer(player1Health);
+        logHealth(player1, player1Health);
+        if (isDead(player1Health) === true) {
+            logDeath(player2, player1)
+            break;
+        }
     }
-} while (repeatedQ)*/
+}
+}
 
-/*let numbers = [1,2,3,4,5,6,9,10]
+console.log(fight('Garrett', 'Player2', 100, 100));*/
 
-for (let numerical of numbers) {
-    console.log(numerical);
-}*/
 
-/*let result = '';
-let i = 11;
+/*function tower(n){
+  for(let i = 1; i <= n ; i++){
+   console.log('***');
+  }
+}
 
-do {
-  i--;
-  result += i + ' ';
-} while (i >= 2);
+tower();*/
 
-console.log(result);*/
+function mountain(n) {
+    for(let i = 0; i <= n; i++) {
+        let build = '*'.repeat(i + 1);
+        console.log(build);
+    }
+}
 
-/*let i = 11;
-
-while (i >= 2) {
-    i--;
-    console.log(i);
-}*/
+mountain(3);
